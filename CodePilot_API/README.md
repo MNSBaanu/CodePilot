@@ -1,6 +1,6 @@
-# BeeWith API
+# CodePilot API
 
-Backend service for BeeWith's developer-support platform.
+Backend service for CodePilot's developer-support platform.
 
 This API powers the Code Health module in phase 1 and is designed to expand into broader developer-assistant workflows.
 
@@ -8,12 +8,12 @@ Phase 1 includes repository submissions and structured findings such as bugs, du
 
 ## Current State
 
-`BeeWith_API` is currently a scaffold and is being rebuilt after the product pivot.
+`CodePilot_API` is currently a scaffold and is being rebuilt after the product pivot.
 
 At the moment, the repository contains:
 
 ```text
-BeeWith_API/
+CodePilot_API/
   src/
     config/
   README.md

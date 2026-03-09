@@ -1,8 +1,8 @@
-# BeeWith Web
+# CodePilot Web
 
-Frontend for BeeWith's developer-support platform.
+Frontend for CodePilot's developer-support platform.
 
-This application delivers BeeWith's initial user experience where Code Health is one module within a broader AI developer assistant.
+This application delivers CodePilot's initial user experience where Code Health is one module within a broader AI developer assistant.
 
 ## Scope (MVP)
 
@@ -37,7 +37,7 @@ The web app should support:
 ### Run Locally
 
 ```bash
-cd BeeWith_Web
+cd CodePilot_Web
 npm install
 npm run dev
 ```
@@ -58,7 +58,7 @@ npm run preview
 
 ## Suggested Environment Variables
 
-Create `BeeWith_Web/.env` when API integration starts:
+Create `CodePilot_Web/.env` when API integration starts:
 
 ```env
 VITE_API_BASE_URL=http://localhost:5000
@@ -67,7 +67,7 @@ VITE_API_BASE_URL=http://localhost:5000
 ## Folder Overview
 
 ```text
-BeeWith_Web/
+CodePilot_Web/
   src/
     components/
     pages/

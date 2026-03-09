@@ -1,10 +1,10 @@
-# BeeWith
+# CodePilot
 
-BeeWith is an AI-powered developer support platform.
+CodePilot is an AI-powered developer support platform.
 
-Repository analysis is one core module, but the product is broader: BeeWith helps teams improve code quality, answer engineering questions, and provide role-based guidance.
+Repository analysis is one core module, but the product is broader: CodePilot helps teams improve code quality, answer engineering questions, and provide role-based guidance.
 
-## What BeeWith Does
+## What CodePilot Does
 
 - Code Health: analyze repositories for issues and improvements
 - Developer Assistant: provide practical engineering guidance
@@ -28,16 +28,16 @@ Repository analysis is one core module, but the product is broader: BeeWith help
 ## Current Repository Structure
 
 ```text
-BeeWith/
-  BeeWith_API/    # Backend service (in progress)
-  BeeWith_Web/    # Frontend app (React + Vite)
+CodePilot/
+  CodePilot_API/    # Backend service (in progress)
+  CodePilot_Web/    # Frontend app (React + Vite)
   README.md
 ```
 
 ## Tech Stack
 
 - Frontend: React, React Router, Vite
-- Backend: Node.js service scaffold (`BeeWith_API`)
+- Backend: Node.js service scaffold (`CodePilot_API`)
 
 ## Status
 

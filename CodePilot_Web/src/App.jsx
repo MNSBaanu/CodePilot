@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="app-shell">
       <header className="page-header">
-        <h1 className="page-title">BeeWith Developer Support</h1>
+        <h1 className="page-title">CodePilot Developer Support</h1>
         <p className="page-subtitle">
           Code Health is one included module in a broader AI developer support platform.
         </p>
