@@ -2,7 +2,7 @@
 
 Frontend for CodePilot's developer-support platform.
 
-This application delivers CodePilot's initial user experience where Code Health is one module within a broader AI developer assistant.
+This application delivers a focused experience for identifying issues and bugs, suggesting practical fixes, and surfacing improvement opportunities.
 
 ## Scope (MVP)
 
@@ -10,8 +10,9 @@ The web app should support:
 1. Code Health module: repository submission and analysis
 2. Analysis status tracking (queued, running, completed)
 3. Findings dashboard grouped by category
-4. Role-based view modes (Frontend, Backend, QA, DevOps, Security)
-5. Foundation for additional developer-assistant workflows
+4. Fix suggestions and improvement suggestions for each finding
+5. Role-based view modes (Frontend, Backend, QA, DevOps, Security)
+6. Foundation for additional developer-assistant workflows
 
 ## Planned Feedback Categories
 
@@ -20,6 +21,14 @@ The web app should support:
 - `Duplicate Code`
 - `Hardcoded Values`
 - `Improvement Suggestions`
+
+## Vibe Coder Feature Direction
+
+- Quick repo scan and re-scan loop
+- File-level fix guidance with concise reasoning
+- Suggested patch snippets for common issue types
+- Role-aware filters for faster execution
+- Workflow from findings to fix tracking
 
 ## Tech Stack
 

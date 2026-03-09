@@ -1,21 +1,24 @@
 # CodePilot
 
-CodePilot is an AI-powered developer support platform.
+CodePilot is an AI-powered developer support platform for modern vibe-coding workflows.
 
-Repository analysis is one core module, but the product is broader: CodePilot helps teams improve code quality, answer engineering questions, and provide role-based guidance.
+It helps developers identify issues and bugs, suggest practical fixes, and generate clear improvement recommendations across a codebase.
 
 ## What CodePilot Does
 
-- Code Health: analyze repositories for issues and improvements
-- Developer Assistant: provide practical engineering guidance
+- Code Health: scan repositories to detect bugs, smells, duplicates, and risky patterns
+- Fix Suggestions: propose actionable, file-level fixes for each finding
+- Improvement Suggestions: recommend architecture, maintainability, and readability upgrades
 - Role-Aware Feedback: tailor outputs for Frontend, Backend, QA, DevOps, and Security
+- Vibe Coder Support: fast context, concise explanations, and developer-friendly workflows
 
 ## MVP Focus
 
 1. Repository submission
 2. Analysis status tracking
 3. Findings dashboard with severity and file references
-4. Role-based recommendations
+4. Fix and improvement suggestions for each finding
+5. Role-based recommendations
 
 ## Analysis Categories
 
@@ -24,6 +27,15 @@ Repository analysis is one core module, but the product is broader: CodePilot he
 - Duplicate code
 - Hardcoded values
 - Improvement suggestions
+
+## Features Needed For Vibe Coder Devs
+
+- One-click repository scan and quick re-scan
+- Ranked findings by severity and impact
+- Explain-why + suggested fix for each issue
+- Suggested patch snippets before applying changes
+- Role-aware views for focused action (Frontend, Backend, QA, DevOps, Security)
+- Progress tracking from detected issue to fixed status
 
 ## Current Repository Structure
 
