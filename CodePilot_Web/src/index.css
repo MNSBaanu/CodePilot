@@ -7,22 +7,22 @@
 }
 
 :root {
-  --primary-gold: #FFB800;
-  --primary-dark: #e6a600;
-  --honey-light: #fff9e6;
-  --honey-lighter: #fffbf0;
-  --text-dark: #2c2c2c;
-  --text-gray: #666;
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
-  --shadow-lg: 0 8px 32px rgba(255, 184, 0, 0.2);
+  --primary-gold: #1a3a6b;
+  --primary-dark: #122d57;
+  --honey-light: #e8eef7;
+  --honey-lighter: #f0f4fb;
+  --text-dark: #0f1c2e;
+  --text-gray: #4a5568;
+  --shadow-sm: 0 2px 8px rgba(26, 58, 107, 0.08);
+  --shadow-md: 0 4px 16px rgba(26, 58, 107, 0.12);
+  --shadow-lg: 0 8px 32px rgba(26, 58, 107, 0.18);
 }
 
 body {
   font-family: 'Manrope', 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(circle at top right, #f2f7f6 0%, #f5f3ea 45%, #f2eee3 100%);
+  background: radial-gradient(circle at top right, #eef2f9 0%, #f0f4fb 45%, #e8edf6 100%);
   color: var(--text-dark);
   line-height: 1.6;
 }

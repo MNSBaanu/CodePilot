@@ -1,0 +1,161 @@
+export const mockAnalysis = {
+  id: 'analysis-001',
+  repoUrl: 'https://github.com/example/my-app',
+  status: 'completed', // pending | running | completed | failed
+  createdAt: '2026-03-17T10:00:00Z',
+  completedAt: '2026-03-17T10:02:34Z',
+  summary: {
+    total: 12,
+    critical: 2,
+    high: 4,
+    medium: 4,
+    low: 2,
+  },
+};
+
+export const mockFindings = [
+  {
+    id: 'f-001',
+    category: 'bug',
+    severity: 'critical',
+    role: 'backend',
+    file: 'src/auth/login.js',
+    line: 42,
+    title: 'SQL injection vulnerability in login query',
+    explanation:
+      'User input is directly interpolated into the SQL query string without sanitization, allowing attackers to manipulate the query.',
+    fix: 'Use parameterized queries or a prepared statement instead of string interpolation.\n\n```js\n// Before\ndb.query(`SELECT * FROM users WHERE email = \'${email}\'`);\n\n// After\ndb.query("SELECT * FROM users WHERE email = ?", [email]);\n```',
+  },
+  {
+    id: 'f-002',
+    category: 'bug',
+    severity: 'critical',
+    role: 'security',
+    file: 'src/middleware/auth.js',
+    line: 18,
+    title: 'JWT secret hardcoded in source',
+    explanation:
+      'The JWT signing secret is hardcoded as a string literal. This exposes the secret in version control and makes rotation impossible without a code change.',
+    fix: 'Move the secret to an environment variable.\n\n```js\n// Before\nconst secret = "my-super-secret";\n\n// After\nconst secret = process.env.JWT_SECRET;\n```',
+  },
+  {
+    id: 'f-003',
+    category: 'smell',
+    severity: 'high',
+    role: 'backend',
+    file: 'src/controllers/userController.js',
+    line: 87,
+    title: 'Function exceeds 120 lines — split into smaller units',
+    explanation:
+      'The `handleUserUpdate` function handles validation, DB writes, email dispatch, and logging all in one block. This makes it hard to test and maintain.',
+    fix: 'Extract each concern into its own function: `validateUserInput`, `updateUserRecord`, `sendUpdateEmail`, `logUserEvent`.',
+  },
+  {
+    id: 'f-004',
+    category: 'hardcoded',
+    severity: 'high',
+    role: 'devops',
+    file: 'src/config/database.js',
+    line: 5,
+    title: 'Database URL hardcoded',
+    explanation:
+      'The database connection string is hardcoded. This will break across environments and leaks credentials if committed.',
+    fix: 'Use `process.env.DATABASE_URL` and add it to your `.env` file.',
+  },
+  {
+    id: 'f-005',
+    category: 'duplicate',
+    severity: 'high',
+    role: 'frontend',
+    file: 'src/components/UserCard.jsx',
+    line: 12,
+    title: 'Duplicate date formatting logic across 4 components',
+    explanation:
+      'The same date formatting pattern appears in `UserCard`, `PostCard`, `CommentItem`, and `ActivityFeed`. Any change needs to be made in 4 places.',
+    fix: 'Extract into a shared utility:\n\n```js\n// src/utils/formatDate.js\nexport const formatDate = (iso) =>\n  new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });\n```',
+  },
+  {
+    id: 'f-006',
+    category: 'improvement',
+    severity: 'medium',
+    role: 'frontend',
+    file: 'src/pages/Dashboard.jsx',
+    line: null,
+    title: 'No loading or error states on data fetch',
+    explanation:
+      'The dashboard fetches data but renders nothing while loading and crashes silently on error. Users see a blank screen.',
+    fix: 'Add loading and error state handling:\n\n```jsx\nif (loading) return <Spinner />;\nif (error) return <ErrorBanner message={error.message} />;\n```',
+  },
+  {
+    id: 'f-007',
+    category: 'smell',
+    severity: 'medium',
+    role: 'frontend',
+    file: 'src/hooks/useAuth.js',
+    line: 33,
+    title: 'useEffect missing dependency array',
+    explanation:
+      'A `useEffect` runs on every render because the dependency array is missing. This causes unnecessary re-fetches and potential infinite loops.',
+    fix: 'Add the correct dependency array:\n\n```js\nuseEffect(() => {\n  fetchUser();\n}, [userId]); // add dependencies\n```',
+  },
+  {
+    id: 'f-008',
+    category: 'bug',
+    severity: 'medium',
+    role: 'qa',
+    file: 'src/utils/validators.js',
+    line: 61,
+    title: 'Email regex allows invalid formats',
+    explanation:
+      'The current regex accepts strings like `user@` and `@domain.com` as valid emails, which will cause downstream failures.',
+    fix: 'Use a well-tested email validation library like `validator.js` or replace with a stricter regex pattern.',
+  },
+  {
+    id: 'f-009',
+    category: 'improvement',
+    severity: 'medium',
+    role: 'backend',
+    file: 'src/routes/api.js',
+    line: null,
+    title: 'No rate limiting on public endpoints',
+    explanation:
+      'Public API routes have no rate limiting, making them vulnerable to abuse and brute-force attacks.',
+    fix: 'Add `express-rate-limit` middleware to public routes.',
+  },
+  {
+    id: 'f-010',
+    category: 'hardcoded',
+    severity: 'low',
+    role: 'frontend',
+    file: 'src/components/Header.jsx',
+    line: 8,
+    title: 'App name hardcoded in 6 places',
+    explanation:
+      'The app name "MyApp" is repeated as a string literal across multiple components. A rename requires touching every file.',
+    fix: 'Define it once in a constants file:\n\n```js\n// src/constants.js\nexport const APP_NAME = "MyApp";\n```',
+  },
+  {
+    id: 'f-011',
+    category: 'improvement',
+    severity: 'low',
+    role: 'devops',
+    file: '.github/workflows/ci.yml',
+    line: null,
+    title: 'CI pipeline has no caching step',
+    explanation:
+      'Dependencies are installed fresh on every CI run, adding 60-90 seconds to each build unnecessarily.',
+    fix: 'Add a `cache: npm` step to your GitHub Actions workflow to cache `node_modules`.',
+  },
+  {
+    id: 'f-012',
+    category: 'duplicate',
+    severity: 'low',
+    role: 'backend',
+    file: 'src/services/emailService.js',
+    line: 44,
+    title: 'Error logging duplicated across service files',
+    explanation:
+      'Each service file has its own inline `console.error` pattern. There is no centralized error logging strategy.',
+    fix: 'Create a shared `logger.js` utility and import it across services.',
+  },
+];

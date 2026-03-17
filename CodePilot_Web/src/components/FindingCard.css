@@ -1,0 +1,86 @@
+.finding-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1.5px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  border-left-width: 4px;
+}
+
+.finding-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.finding-card:focus-visible {
+  outline: 2px solid var(--primary-gold);
+  outline-offset: 2px;
+}
+
+.finding-card--critical { border-left-color: #e53e3e; }
+.finding-card--high     { border-left-color: #dd6b20; }
+.finding-card--medium   { border-left-color: #d69e2e; }
+.finding-card--low      { border-left-color: #38a169; }
+
+.finding-card-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.severity-badge {
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 3px 9px;
+  border-radius: 20px;
+}
+
+.severity-badge--critical { background: #fff5f5; color: #c53030; }
+.severity-badge--high     { background: #fffaf0; color: #c05621; }
+.severity-badge--medium   { background: #fffff0; color: #b7791f; }
+.severity-badge--low      { background: #f0fff4; color: #276749; }
+
+.category-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  background: #f7fafc;
+  border: 1px solid #e2e8f0;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: capitalize;
+}
+
+.role-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #553c9a;
+  background: #faf5ff;
+  border: 1px solid #e9d8fd;
+  padding: 3px 9px;
+  border-radius: 20px;
+  text-transform: capitalize;
+  margin-left: auto;
+}
+
+.finding-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #17202a;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.finding-file {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.78rem;
+  color: #718096;
+  font-family: 'Courier New', monospace;
+}

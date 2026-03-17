@@ -1,0 +1,116 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.home-inner {
+  max-width: 620px;
+  width: 100%;
+  text-align: center;
+}
+
+.home-kicker {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary-gold);
+  background: rgba(26, 58, 107, 0.08);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.home-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #17202a;
+  margin-bottom: 16px;
+}
+
+.home-subtitle {
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.repo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.repo-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.repo-input-icon {
+  position: absolute;
+  left: 14px;
+  color: #888;
+  display: flex;
+  align-items: center;
+}
+
+.repo-input {
+  width: 100%;
+  padding: 14px 16px 14px 44px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  border: 1.5px solid #dde3e8;
+  border-radius: 12px;
+  background: #fff;
+  color: #17202a;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.repo-input:focus {
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 0 3px rgba(26, 58, 107, 0.12);
+}
+
+.repo-error {
+  font-size: 0.85rem;
+  color: #e53e3e;
+  text-align: left;
+}
+
+
+.home-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.feature-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #4a5568;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+@media (max-width: 480px) {
+  .home-title {
+    font-size: 1.8rem;
+  }
+}

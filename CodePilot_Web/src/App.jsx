@@ -1,15 +1,20 @@
-import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import AnalysisStatus from './pages/AnalysisStatus';
+import Findings from './pages/Findings';
+import FindingDetail from './pages/FindingDetail';
 
 function App() {
   return (
-    <main className="app-shell">
-      <section className="panel">
-        <p className="hero-kicker">CodePilot</p>
-        <h1 className="page-title">Blank Sketch</h1>
-        <p className="page-subtitle">Everything removed. Ready to build from scratch.</p>
-      </section>
-    </main>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/analysis/:analysisId" element={<AnalysisStatus />} />
+        <Route path="/analysis/:analysisId/findings" element={<Findings />} />
+        <Route path="/analysis/:analysisId/findings/:findingId" element={<FindingDetail />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
