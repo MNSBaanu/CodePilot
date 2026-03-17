@@ -12,14 +12,6 @@ It helps developers identify issues and bugs, suggest practical fixes, and gener
 - Role-Aware Feedback: tailor outputs for Frontend, Backend, QA, DevOps, and Security
 - Vibe Coder Support: fast context, concise explanations, and developer-friendly workflows
 
-## MVP Focus
-
-1. Repository submission
-2. Analysis status tracking
-3. Findings dashboard with severity and file references
-4. Fix and improvement suggestions for each finding
-5. Role-based recommendations
-
 ## Analysis Categories
 
 - Bugs
@@ -28,32 +20,70 @@ It helps developers identify issues and bugs, suggest practical fixes, and gener
 - Hardcoded values
 - Improvement suggestions
 
-## Features Needed For Vibe Coder Devs
-
-- One-click repository scan and quick re-scan
-- Ranked findings by severity and impact
-- Explain-why + suggested fix for each issue
-- Suggested patch snippets before applying changes
-- Role-aware views for focused action (Frontend, Backend, QA, DevOps, Security)
-- Progress tracking from detected issue to fixed status
-
-## Current Repository Structure
+## Repository Structure
 
 ```text
 CodePilot/
-  CodePilot_API/    # Backend service (in progress)
+  CodePilot_API/    # Backend service (scaffold — in progress)
   CodePilot_Web/    # Frontend app (React + Vite)
   README.md
 ```
 
 ## Tech Stack
 
-- Frontend: React, React Router, Vite
-- Backend: Node.js service scaffold (`CodePilot_API`)
+- Frontend: React 18, React Router v6, Vite
+- Backend: Node.js (planned — CodePilot_API)
 
-## Status
+## Frontend Status
 
-Product pivot in progress. Initial development is focused on delivering a clean and professional MVP.
+MVP frontend is complete and running on mock data.
+
+Pages built:
+- Home — repository URL submission form
+- Analysis Status — animated scan progress with severity summary
+- Findings Dashboard — filterable list by role, severity, and category
+- Finding Detail — explanation, file reference, and suggested fix with code snippets
+
+Features:
+- Sticky navbar with branding and navigation
+- Role filter: Frontend, Backend, QA, DevOps, Security
+- Severity filter: Critical, High, Medium, Low
+- Category filter: Bug, Smell, Duplicate, Hardcoded, Improvement
+- Dark blue color theme
+
+To run the frontend locally:
+
+```bash
+cd CodePilot_Web
+npm install
+npm run dev
+```
+
+## Backend Status
+
+`CodePilot_API` is currently a scaffold. No endpoints are implemented yet.
+
+Planned endpoints:
+
+```text
+POST   /api/repos
+GET    /api/repos/:repoId
+POST   /api/analyses
+GET    /api/analyses/:analysisId
+GET    /api/analyses/:analysisId/findings
+```
+
+See `CodePilot_API/README.md` for full backend scope and planned findings format.
+
+## Upcoming Features
+
+- Mark finding as fixed (progress tracking: detected → in progress → fixed)
+- Re-scan button on findings page
+- Analysis history on home page
+- Export report as PDF or CSV
+- Replace mock data with real API calls
+- Loading skeletons and error boundaries
+- Role dashboard — focused summary view per role
 
 ## Contributing
 
