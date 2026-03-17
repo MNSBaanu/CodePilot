@@ -31,7 +31,6 @@ export default function AnalysisStatus() {
   return (
     <main className="status-page">
       <div className="status-card">
-        <span className="status-kicker">Analysis</span>
         <h1 className="status-title">
           {done ? 'Analysis complete' : 'Scanning your repository…'}
         </h1>

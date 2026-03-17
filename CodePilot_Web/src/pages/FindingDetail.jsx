@@ -2,8 +2,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { mockFindings } from '../data/mockFindings';
 import './FindingDetail.css';
 
-const CATEGORY_ICONS = { bug: '', smell: '', duplicate: '', hardcoded: '', improvement: '' };
-
 export default function FindingDetail() {
   const { analysisId, findingId } = useParams();
   const navigate = useNavigate();
@@ -22,7 +20,6 @@ export default function FindingDetail() {
     );
   }
 
-  // Render fix text — split on code fences for basic highlighting
   const renderFix = (text) => {
     const parts = text.split(/(```[\s\S]*?```)/g);
     return parts.map((part, i) => {
